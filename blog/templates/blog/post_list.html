@@ -9,19 +9,16 @@
         </div>
 
         <div>
-            <p>welcome friends</p>
+            <p><strong>welcome friends</strong></p>
         </div>
 
-        <div>
-            <p>published: a time</p>
-            <h2><a href="">my first post</a></h2>
-            <p>sample text</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+        {% endfor %}
 
-        <div>
-            <p>published: another time</p>
-            <h2><a href="">my second post</a></h2>
-            <p>really cool sample text</p>
-        </div>
     </body>
 </html>
